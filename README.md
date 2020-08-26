@@ -1,3 +1,4 @@
+my entry for the 1st Timathon challenge
 # great-usernames
 A cool Username generator + sqlite3 database for storing them + repetition protection
 
