@@ -19,7 +19,7 @@ from src/main import *
 username = generate_username()
 print(insert_username(username))
 ```
-If the terminal prints `True` then you knoe that the username has been inserted.
+If the terminal prints `True` then you know that the username has been inserted.
 
 
 
