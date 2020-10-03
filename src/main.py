@@ -4,13 +4,11 @@ import sqlite3
 ## Imports ## 
 
 def generate_username():
-    url = "https://svnweb.freebsd.org/csrg/share/dict/words?view=co&content-type=text/plain" ## great website :)
-
-    raw_names = requests.get(url).text #-> gets the text(names) from the webiste. returns a string with names
-    names = raw_names.split() # ---------> splits the string into different names. returns a list
-
-    username = random.choice(names) + str(random.randint(1, 999)) ## finds a username from the list generated above
-    return username
+    with open(r'static\names.txt') as names:
+        names = names.read().replace('\n', ' ')
+        names = names.split(' ')
+        username = random.choice(names) + str(random.randint(1, 999)) ## finds a username from the list generated above
+        return username
 
 
 def insert_username(username):
@@ -30,6 +28,6 @@ def insert_username(username):
 
 
 
-# username = generate_username()
-# print(insert_username(username))
-
+username = generate_username()
+print(username)
+print(insert_username(username))
