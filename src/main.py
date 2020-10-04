@@ -4,7 +4,7 @@ import sqlite3
 ## Imports ## 
 
 def generate_username():
-    with open(r'static\names.txt') as names:
+    with open(r'names.txt') as names:
         names = names.read().replace('\n', ' ')
         names = names.split(' ')
         username = random.choice(names) + str(random.randint(1, 999)) ## finds a username from the list generated above
@@ -27,7 +27,7 @@ def insert_username(username):
         return False # --> returns false if username was found in the database. repitition detection :)
 
 
-
-username = generate_username()
-print(username)
-print(insert_username(username))
+if __name__ == "__main__":
+    username = generate_username()
+    print(username)
+    print(insert_username(username))
