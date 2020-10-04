@@ -4,6 +4,9 @@ import sqlite3
 ## Imports ## 
 
 def generate_username():
+    '''
+    generates usernames 
+    '''
     with open(r'names.txt') as names:
         names = names.read().replace('\n', ' ')
         names = names.split(' ')
@@ -12,6 +15,9 @@ def generate_username():
 
 
 def insert_username(username):
+    '''
+    adds usernames to a sqlite3 database known as 'user.db'
+    '''
     ## db config ######
     conn = sqlite3.connect('user.db')
     cursor = conn.cursor()
